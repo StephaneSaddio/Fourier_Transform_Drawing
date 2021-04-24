@@ -7,3 +7,7 @@ url = 'https://www.seekpng.com/png/detail/116-1164659_line-drawing-bunny-rabbit-
 
 class test_Imgmanip(unittest.TestCase):
 
+    def test_img_object (self):
+        """ Assert that the image object is created """
+        img = Imagemanip(url)
+        self.assertIsInstance(img, Imagemanip)
