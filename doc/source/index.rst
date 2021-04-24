@@ -11,6 +11,7 @@ Welcome to FourierDrawing's documentation!
    :caption: Contents:
 
 Classe_FourierApprox\FourierApprox
+API//doc
 Animation\anime
 
 Indices and tables
