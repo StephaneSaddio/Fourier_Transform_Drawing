@@ -20,8 +20,8 @@ class Circles:
         self.origin = origin
         self.origin_x = origin[0]
         self.origin_y = origin[1]
-        self.t_times = 0
-        self.steps_times = 0
+        self.t_elapsed = 0
+        self.steps_elapsed = 0
         self.t_current = self.t_init
         self.t_index_current = 0
         self.true_fxn_val_current = self.FT.fxn_vals[t_init]
@@ -87,14 +87,14 @@ class Circles:
     
     def phase(self, dt=1):
         # dt = The number of times to increase "t_vals" for each step
-        self.steps_times += 1
-        next_index = dt*self.steps_times 
+        self.steps_elapsed += 1
+        next_index = dt*self.steps_elapsed 
         if next_index > len(self.FT.t_vals)-1:
             print("Max t-value is reached")
-            self.steps_times -= 1
+            self.steps_elapsed -= 1
         else:
             self.t_current = self.FT.t_vals[next_index]
-            self.t_times = self.t_current - self.t_init
+            self.t_elapsed = self.t_current - self.t_init
             self.t_index_current = next_index
             self.true_fxn_val_current = self.FT.fxn_vals[next_index]
             self.fourier_approx_val_current = self.FT.fourier_approximation[next_index]
