@@ -8,7 +8,6 @@ from copy import deepcopy
 from scipy.spatial import distance
 from scipy.interpolate import UnivariateSpline
 
-
 class Imagemanip:
 
     def __init__(self, url ):
@@ -75,7 +74,7 @@ class Imagemanip:
         print("The image size is : {}".format(self.img_blackwhite.size))
         print("The image mode is : {}".format(self.img_blackwhite.mode))
         print("Numbre of pixels is: {}".format(self.pixels.sum()))
-        
+
     def distance_matrix(self):
         """ Get non-zero pixel coordiantes than calcualte distance between each pair of them """
 
