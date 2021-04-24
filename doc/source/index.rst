@@ -10,7 +10,8 @@ Welcome to FourierDrawing's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+Classe_FourierApprox\FourierApprox
+Animation\anime
 
 Indices and tables
 ==================
