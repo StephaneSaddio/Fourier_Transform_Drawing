@@ -1,9 +1,5 @@
-#%%
 import numpy as np
 from copy import deepcopy
-
-
-#%%
 
 class Circles:
     """
@@ -102,4 +98,3 @@ class Circles:
             self.t_index_current = next_index
             self.true_fxn_val_current = self.FT.fxn_vals[next_index]
             self.fourier_approx_val_current = self.FT.fourier_approximation[next_index]
-# %%
