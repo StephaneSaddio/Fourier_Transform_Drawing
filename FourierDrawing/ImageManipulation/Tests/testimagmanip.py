@@ -11,3 +11,11 @@ class test_Imgmanip(unittest.TestCase):
         """ Assert that the image object is created """
         img = Imagemanip(url)
         self.assertIsInstance(img, Imagemanip)
+
+    def test_thresh_val (self):
+        """ Assert that the threshold value is between 0 and 255 """
+        img = Imagemanip(url)
+        img.single_color()
+        img.convert_binary(scale=3, thresh_val=200)
+        self.assertGreater(img.thresh_val, 0) # thresh_val > 0
+        self.assertLess(img.thresh_val, 255) # thresh_val < 255
