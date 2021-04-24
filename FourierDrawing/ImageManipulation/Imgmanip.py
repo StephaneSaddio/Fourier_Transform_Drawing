@@ -2,11 +2,15 @@ from PIL import Image
 import requests
 from io import BytesIO
 import pylab
+import numpy as np
+import matplotlib.pyplot as plt
 from copy import deepcopy
+from scipy.spatial import distance
 from scipy.interpolate import UnivariateSpline
 
 
 class Imagemanip:
+    
     def __init__(self, url ):
         """ Create image object  """
 
@@ -25,3 +29,30 @@ class Imagemanip:
         print("The image format is : {}".format(self.img_raw.format))
         print("The image size is : {}".format(self.img_raw.size))
         print("The image mode is : {}".format(self.img_raw.mode))
+
+    def single_color(self):
+        """ Convert image to single color """  
+
+        #Convert image to single color
+        self.img_single_color = self.img_raw.convert('L')
+
+    def convert_binary(self, scale=3, thresh_val=200):   
+        """ Convert to binary image with 0 or 255 array values """
+
+        # convert image to nympy array
+        self.thresh_val = thresh_val
+        image_array = np.array(self.img_single_color)
+
+        # convert to binary image_array using thresh_val to cut
+        for i in range(len(image_array)):
+            for j in range(len(image_array[0])):
+                if image_array[i][j] > thresh_val:
+                    image_array[i][j] = 255 #white
+                else:
+                    image_array[i][j] = 0   #black
+        self.image_array = image_array
+        image = Image.fromarray(image_array)
+        
+        # reduce number of non-zero pixels by scaling down the image
+        self.img_scale = image.resize(tuple([int(v/scale) for v in image.size]),Image.ANTIALIAS)
+    
