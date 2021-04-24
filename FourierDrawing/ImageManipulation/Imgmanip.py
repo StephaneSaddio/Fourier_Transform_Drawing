@@ -10,7 +10,7 @@ from scipy.interpolate import UnivariateSpline
 
 
 class Imagemanip:
-    
+
     def __init__(self, url ):
         """ Create image object  """
 
@@ -55,4 +55,23 @@ class Imagemanip:
         
         # reduce number of non-zero pixels by scaling down the image
         self.img_scale = image.resize(tuple([int(v/scale) for v in image.size]),Image.ANTIALIAS)
-    
+
+    def black_and_white(self):
+        """  Convert image to black and white """
+
+        # convert image to black and white
+        self.img_blackwhite = self.img_scale.convert(mode='1', dither=2)
+        self.pixels = (1 - np.asarray(self.img_blackwhite).astype(int))
+        self.pixels_vector = np.reshape(self.pixels, self.pixels.size)
+
+    def show_black_and_white(self):
+        """  Show black and white image  """
+
+        # Show black and white image 
+        pylab.imshow(np.asarray(self.img_blackwhite))
+
+        # Show black and white image informations
+        print("The image format is : {}".format(self.img_blackwhite.format))
+        print("The image size is : {}".format(self.img_blackwhite.size))
+        print("The image mode is : {}".format(self.img_blackwhite.mode))
+        print("Numbre of pixels is: {}".format(self.pixels.sum()))
