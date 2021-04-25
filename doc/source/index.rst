@@ -7,11 +7,17 @@ Welcome to FourierDrawing's documentation!
 ==========================================
 
 .. toctree::
+   :maxdepth: 1
+   :caption: Fourier Approximation:
+   
+   Classe_FourierApprox/fourierApprox
+
+
+.. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-Classe_FourierApprox\FourierApprox
-Animation\anime
+
 
 Indices and tables
 ==================
