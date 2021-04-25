@@ -8,7 +8,7 @@ Fourier decomposition of given FourierTransform object.
 
 Describing circular path:
 
-.. image:: ps://betterexplained.com/wp-content/webp-express/webp-images/uploads/images/circular-path-parameters-20121201-203317.png.webp
+.. image:: circular-path-parameters.png
 
 
 Class circles coefficients
