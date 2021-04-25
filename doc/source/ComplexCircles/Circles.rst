@@ -6,6 +6,10 @@ In this part we create a third class that compute a Fourier transform objet from
 the second class fourierApprox. This class Tracks radii and centers of circles implied by 
 Fourier decomposition of given FourierTransform object.
 
+Describing circular path:
+
+.. image:: ps://betterexplained.com/wp-content/webp-express/webp-images/uploads/images/circular-path-parameters-20121201-203317.png.webp
+
 
 Class circles coefficients
 --------------------------
