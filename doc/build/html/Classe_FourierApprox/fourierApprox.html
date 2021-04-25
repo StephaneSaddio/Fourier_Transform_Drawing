@@ -1,97 +1,259 @@
 
-<!DOCTYPE html>
 
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; FourierDrawing 0.1 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Fourier Approximation &mdash; FourierDrawing 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Image Manipulation" href="../ImageManipulation/Imagemanip.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="../index.html" class="icon icon-home"> FourierDrawing
+          
+
+          
+          </a>
+
+          
             
-  
+            
+          
 
-          </div>
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
           
         </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">FourierDrawing</a></h1>
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Image manipulations:</span></p>
 <ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-  </ul></li>
+<li class="toctree-l1"><a class="reference internal" href="../ImageManipulation/Imagemanip.html">Image Manipulation</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Fourier Approximation:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Fourier Approximation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#class-fourier-coefficients">Class  Fourier coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#note">Note</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">FourierDrawing</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Fourier Approximation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/Classe_FourierApprox/fourierApprox.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
 </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fourier-approximation">
+<h1>Fourier Approximation<a class="headerlink" href="#fourier-approximation" title="Permalink to this headline">¶</a></h1>
+<p>In the second part, we create the FourierApprox class that computes the Fourier coefficients from the path
+generated  by the Imagemanip object.</p>
+<p>The  fourier coefficients of functin f are defined by :</p>
+<div class="math notranslate nohighlight">
+\[c_{n}(f) =  \frac{1}{T} \int_{0}^{T} f(t) \exp^{-2\pi n  i \frac{t}{T} }\]</div>
+<p>The Fourier series of f of order N is then defined by:</p>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[\sum_{n=0}^{N} c_{n}(f) \exp^{-2\pi n i \frac{t}{T} }\]</div>
+</div></blockquote>
+<div class="section" id="class-fourier-coefficients">
+<h2>Class  Fourier coefficients<a class="headerlink" href="#class-fourier-coefficients" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="FourierDrawing.FourierApproximation.Class_fourierApproximation.FourierApprox">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">FourierDrawing.FourierApproximation.Class_fourierApproximation.</span></code><code class="sig-name descname"><span class="pre">FourierApprox</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fxn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rnge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_circles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FourierDrawing.FourierApproximation.Class_fourierApproximation.FourierApprox" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>This class will calculate the complex Fourier coefficients for a given spline function</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fxn</strong> (<em>scipy.interpolate.UnivariateSpline.</em>) – Spline function (i.e coordinates found by Imagemanip class) to be Converted  to complex numbers with real and imaginary part</p></li>
+<li><p><strong>rnge</strong> (<em>tuple</em>) – the range at which to evaluate fxn.</p></li>
+<li><p><strong>N</strong> (<em>int</em><em>, </em><em>default = 500</em>) – Number of  Fourier coefficients  that will be  calculate.</p></li>
+<li><p><strong>period</strong> (<em>int</em><em>, </em><em>default = None</em>) – the period, if the period == None then it’s equal to the entire length of the function.</p></li>
+<li><p><strong>num_points</strong> (<em>int</em><em>, </em><em>default = 1000</em>) – Number of points at which to evalute function.</p></li>
+<li><p><strong>num_circles</strong> (<em>int</em><em>, </em><em>default = 50</em>) – Number of cercles that will be used for drawing, this is needed to calculate proper offsets</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="note">
+<h2>Note<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h2>
+<p>When studying Fourier series and Fourier transforms, sometimes a distortion of the signal appears, known as the Gibbs phenomenon.
+This phenomenon is a side effect which occurs near a discontinuity. Gibbs-type phenomenon causes perturbations
+near endpoints of interval. for more details <a class="reference external" href="https://en.wikipedia.org/wiki/Gibbs_phenomenon">https://en.wikipedia.org/wiki/Gibbs_phenomenon</a>.</p>
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Fourier_Series.svg/800px-Fourier_Series.svg.png"><img alt="Gibbs phenomenon" class="align-center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Fourier_Series.svg/800px-Fourier_Series.svg.png" style="width: 300.0px; height: 150.0px;" /></a>
+<p>Spline function doesn’t make endpoints exactly equal, so we set the first and last points to their average. In practice, the difficulties associated with the Gibbs phenomenon can be ameliorated by using a smoother method
+of Fourier series summation. We solve the problem by adjusting intercept to minimize distance between entire function, rather than
+just the intercepts.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../ImageManipulation/Imagemanip.html" class="btn btn-neutral float-left" title="Image Manipulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-</div>
-<script>$('#searchbox').show(0);</script>
 
+  <hr/>
 
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Kamal Ayoubi - Otmane Jabbar - Stéphane Sadio.
 
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-
-
-
-
+</footer>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2021, Kamal Ayoubi - Otmane Jabbar - Stéphane Sadio.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="../_sources/Classe_FourierApprox/fourierApprox.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
     
-  </body>
+   
+
+</body>
 </html>
