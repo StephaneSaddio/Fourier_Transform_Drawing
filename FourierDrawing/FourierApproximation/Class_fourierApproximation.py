@@ -1,28 +1,35 @@
 import numpy as np
 from copy import deepcopy
-from scipy.interpolate import UnivariateSpline
+from scipy.interpolate import UnivariateSpline 
 
 class FourierApprox:
     """
-    This class will calculate the complex Fourier coefficients for a given function
+            This class will calculate the complex Fourier coefficients for a given spline function  
+
+        :type fxn:  scipy.interpolate.UnivariateSpline.
+        :param fxn: Spline function (i.e coordinates found by Imagemanip class) to be Converted  to complex numbers with real and imaginary part
+        :type rnge: tuple
+        :param rnge: the range at which to evaluate fxn.
+        :type N: int, default = 500 
+        :param N: Number of  Fourier coefficients  that will be  calculate.
+        :type period: int, default = None 
+        :param period: the period, if the period == None then it's equal to the entire length of the function.
+        :type num_points: int, default = 1000
+        :param num_points: Number of points at which to evalute function.
+        :type num_circles: int, default = 50
+        :param num_circles: Number of cercles that will be used for drawing, this is needed to calculate proper offsets
+
     """
-    def __init__(self,
-            fxn,  # Spline function to be transformed (as Python function object)
-             # Note: y is parameterized by its own index
-             # 13th value in array = value of function at t=12
-            rnge, # (.,.) tuple of range at which to evaluate fxn
-            N=500,  # Number of coefficients to calculate
-            period=None,  # If different than full length of function
-            num_points=1000, # Number of points at which to evalute function
-            num_circles=50 # This is needed to calculate proper offsets
-        ):
+
+    def __init__(self, fxn, rnge, N=500, period=None,  num_points=1000, num_circles=50 ):
+
         
-        assert isinstance(fxn , UnivariateSpline), f"Attribute 'fxn' should be scipy.interpolate.UnivariateSpline object, but it's of type {type(fxn)}.. Try again!"
-        assert isinstance(rnge, tuple) ,f"Attribute 'rnge' should be a tuple, but it's of type {type(rnge)}.. Try again!"
-        assert isinstance(N, int), f"Attribute 'N' should be an integer, but it's of type {type(N)}.. Try again!"
-        assert isinstance(period,( int ,type(None))) , f"Attribute 'period' should be an integer or equal a None , but it's of type {type(period)}.. Try again!"
-        assert isinstance(num_points, int), f"Attribute 'num_points' should be an integer, but it's of type {type(num_points)}.. Try again!"
-        assert isinstance(num_circles, int), f"Attribute 'num_circles' should be an integer, but it's of type {type(num_circles)}.. Try again!"
+        assert isinstance(fxn , UnivariateSpline), f"Parameter 'fxn' should be scipy.interpolate.UnivariateSpline object, but it's of type {type(fxn)}.. Try again!"
+        assert isinstance(rnge, tuple) ,f"Parameter 'rnge' should be a tuple, but it's of type {type(rnge)}.. Try again!"
+        assert isinstance(N, int), f"Parameter 'N' should be an integer, but it's of type {type(N)}.. Try again!"
+        assert isinstance(period,( int ,type(None))) , f"Parameter'period' should be an integer or equal a None , but it's of type {type(period)}.. Try again!"
+        assert isinstance(num_points, int), f"Parameter 'num_points' should be an integer, but it's of type {type(num_points)}.. Try again!"
+        assert isinstance(num_circles, int), f"Parameter 'num_circles' should be an integer, but it's of type {type(num_circles)}.. Try again!"
         
         self.num_circles = num_circles
         
