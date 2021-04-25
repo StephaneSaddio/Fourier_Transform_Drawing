@@ -13,10 +13,13 @@ from IPython.display import Image as DisplayImage
 #%%
 import sys
 sys.path.append("..")
+#%%
 from ImageManipulation.Imgmanip import Imagemanip
 from FourierApproximation.Class_fourierApproximation import FourierApprox
-from Circles_radii_center.ComplexCircles import Circles
-url = 'https://www.seekpng.com/png/detail/116-1164659_line-drawing-bunny-rabbit-at-getdrawings-bunny-drawing.png'
+from yy.ComplexCircles import Circles
+#%%
+url = 'https://www.how-to-draw-funny-cartoons.com/image-files/vector-music-001.jpg'
+#%%
 img = Imagemanip(url)
 
 # %%
@@ -262,9 +265,10 @@ ani = animation.FuncAnimation(fig, animate, frames=num_frames,
                               interval=interval, blit=True, init_func=init)
 #%%
 
-ani.save('.animation99.gif', writer='imagemagick')
+ani.save('./../animation99.gif', writer='imagemagick')
 #%%
 DisplayImage(url='.animation99.gif')
+
 
 
 # %%
