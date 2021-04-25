@@ -27,8 +27,8 @@ concatenated circles in the complex plane. Each red line is a vector representin
 Adding the summands corresponds to simply concatenating each of these red vectors in complex space:
 
 .. image:: https://d33wubrfki0l68.cloudfront.net/6db965f0678e487d4d04a8882fbc794e472b4e4b/99187/img/phase-amplitude.png
-   :height: 300
-   :width: 600
+   :height: 600
+   :width: 800
 
 Reference :
 
