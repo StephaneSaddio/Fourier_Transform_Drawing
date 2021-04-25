@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Image Manipulation &mdash; FourierDrawing 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> FourierDrawing
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Fourier Approximation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Classe_FourierApprox/fourierApprox.html">Fourier Approximation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Complex circles:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexCircles/Circles.html">Class circles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexCircles/Circles.html#simple-and-intuitive-principle-explanation">Simple and intuitive principle explanation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">FourierDrawing</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Image Manipulation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/ImageManipulation/Imagemanip.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="image-manipulation">
+<h1>Image Manipulation<a class="headerlink" href="#image-manipulation" title="Permalink to this headline">¶</a></h1>
+<p>The objectives of this first part is to create a Python class which allows you to do a set of manipulations on a starting image (png, jpg, svg,…).</p>
+<ul class="simple">
+<li><p>Convert the departure image to monochrome. Then Convert the image to white and black.</p></li>
+<li><p>Extract the drawing coordinates, then calculate the Euclidean distance between these points.</p></li>
+<li><p>Search the optimal path that connects the drawing points, by using the nearest neighbor method.</p></li>
+<li><p>Convert tours into parametric spline curves.</p></li>
+</ul>
+<div class="section" id="monochrome-image">
+<h2>Monochrome image<a class="headerlink" href="#monochrome-image" title="Permalink to this headline">¶</a></h2>
+<p>Monochrome consists, in photography, of representing only one dominant color in the same photo. As its name suggests, the photo is “mono” (single) “chrome” (color), therefore of single color.</p>
+<p>Here is an example of monochrome image:</p>
+<img alt="../_images/monochrom.jpg" src="../_images/monochrom.jpg" />
+</div>
+<div class="section" id="nearest-neighbor-search">
+<h2>Nearest neighbor search<a class="headerlink" href="#nearest-neighbor-search" title="Permalink to this headline">¶</a></h2>
+<p>Nearest neighbor search (NNS), as a form of proximity search, is the optimization problem of finding the point in a given set that is closest (or most similar) to a given point. Closeness is typically expressed in terms of a dissimilarity function, distance or cost.</p>
+<p>The nearest neighbor method is one of the heuristic methods which allows to find the shortest closed path (closed graph) which connects a set of points, passing through all the points.
+These are the steps of the algorithm:</p>
+<ul class="simple">
+<li><p>Initialize all points as unvisited.</p></li>
+<li><p>Select an arbitrary point, set it as the current point u. Mark u as visited.</p></li>
+<li><p>Find out the shortest edge connecting the current point u and an unvisited point v.</p></li>
+<li><p>Set v as the current point u. Mark v as visited.</p></li>
+<li><p>If all the points in the domain are visited, then terminate. Else, go to step 3.</p></li>
+</ul>
+<p>In this class, the set of points is presented by the points of non-zero pixels. The optimization criterion is the Euclidean distance between the non-zero pixels.</p>
+<p>Reference:</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Nearest_neighbor_search">https://en.wikipedia.org/wiki/Nearest_neighbor_search</a></p>
+<p>Here is an example obtained by the nearest neighbor method</p>
+<img alt="../_images/NR_path.png" src="../_images/NR_path.png" />
+</div>
+<div class="section" id="spline-curves">
+<h2>Spline curves<a class="headerlink" href="#spline-curves" title="Permalink to this headline">¶</a></h2>
+<p>In mathematics, splines are functions described by an ensemble of polynomials.</p>
+<p>The term “spline” is used to refer to a wide class of functions that are used in applications requiring data interpolation and/or smoothing. The data may be either one-dimensional or multi-dimensional.</p>
+<p>in this class we used the function Scipy.UnivariateSpline() which allowed to convert tours into parametric spline curves.</p>
+<p>Reference:</p>
+<p><a class="reference external" href="https://blog.finxter.com/fitting-data-with-scipys-univariatespline-and-lsqunivariatespline/">https://blog.finxter.com/fitting-data-with-scipys-univariatespline-and-lsqunivariatespline/</a></p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Spline_(mathematics">https://en.wikipedia.org/wiki/Spline_(mathematics</a>)</p>
+<p>Here is an example of function approached by parametric spline curves</p>
+<img alt="../_images/spline_curves.png" src="../_images/spline_curves.png" />
+<dl class="py class">
+<dt id="FourierDrawing.ImageManipulation.Imgmanip.Imagemanip">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">FourierDrawing.ImageManipulation.Imgmanip.</span></code><code class="sig-name descname"><span class="pre">Imagemanip</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FourierDrawing.ImageManipulation.Imgmanip.Imagemanip" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="FourierDrawing.ImageManipulation.Imgmanip.Imagemanip.black_and_white">
+<code class="sig-name descname"><span class="pre">black_and_white</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FourierDrawing.ImageManipulation.Imgmanip.Imagemanip.black_and_white" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert image to black and white</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="FourierDrawing.ImageManipulation.Imgmanip.Imagemanip.contours_search">
+<code class="sig-name descname"><span class="pre">contours_search</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FourierDrawing.ImageManipulation.Imgmanip.Imagemanip.contours_search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the image tour using the nearest neighbor heuristic</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="FourierDrawing.ImageManipulation.Imgmanip.Imagemanip.convert_binary">
+<code class="sig-name descname"><span class="pre">convert_binary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh_val</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FourierDrawing.ImageManipulation.Imgmanip.Imagemanip.convert_binary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert to binary image with 0 or 255 array values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="FourierDrawing.ImageManipulation.Imgmanip.Imagemanip.distance_matrix">
+<code class="sig-name descname"><span class="pre">distance_matrix</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FourierDrawing.ImageManipulation.Imgmanip.Imagemanip.distance_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get non-zero pixel coordiantes than calcualte distance between each pair of them</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="FourierDrawing.ImageManipulation.Imgmanip.Imagemanip.get_splines">
+<code class="sig-name descname"><span class="pre">get_splines</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">degree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FourierDrawing.ImageManipulation.Imgmanip.Imagemanip.get_splines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Smooth the curves tour angles</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="FourierDrawing.ImageManipulation.Imgmanip.Imagemanip.show">
+<code class="sig-name descname"><span class="pre">show</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FourierDrawing.ImageManipulation.Imgmanip.Imagemanip.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show raw image and his informations</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="FourierDrawing.ImageManipulation.Imgmanip.Imagemanip.show_black_and_white">
+<code class="sig-name descname"><span class="pre">show_black_and_white</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FourierDrawing.ImageManipulation.Imgmanip.Imagemanip.show_black_and_white" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show black and white image</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="FourierDrawing.ImageManipulation.Imgmanip.Imagemanip.single_color">
+<code class="sig-name descname"><span class="pre">single_color</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FourierDrawing.ImageManipulation.Imgmanip.Imagemanip.single_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert image to single color</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Kamal Ayoubi - Otmane Jabbar - Stéphane Sadio.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
