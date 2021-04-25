@@ -83,9 +83,11 @@ class Circles:
     
     
     def get_circles(self, transpose=False):
+        """ get circles"""
         return(self.circle_positions(transpose=transpose))
     
     def step(self, dt=1):
+        """Describing circular path"""
         # dt = how many times to increment t_vals array for each step
         self.steps_elapsed += 1
         next_index = dt*self.steps_elapsed 

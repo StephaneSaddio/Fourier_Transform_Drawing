@@ -5,11 +5,14 @@
 
 Welcome to FourierDrawing's documentation!
 ==========================================
+
+
 .. toctree::
    :maxdepth: 1
    :caption: Image manipulations:
-   
+
    ImageManipulation/Imagemanip
+
 
 .. toctree::
    :maxdepth: 1
@@ -23,6 +26,13 @@ Welcome to FourierDrawing's documentation!
    
    ComplexCircles/Circles
    
+.. toctree::
+   :maxdepth: 1
+   :caption: Complex circles:
+   
+   ComplexCircles/Circles
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
