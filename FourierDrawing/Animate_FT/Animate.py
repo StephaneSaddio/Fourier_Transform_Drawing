@@ -1,3 +1,4 @@
+# %%
 from matplotlib import animation
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import imshow
@@ -15,7 +16,8 @@ from ImageManipulation.Imgmanip import Imagemanip
 from FourierApproximation.Class_fourierApproximation import FourierApprox
 from Circles_radii_center.ComplexCircles import Circles
 
-url = 'https://e7.pngegg.com/pngimages/47/14/png-clipart-line-art-drawing-bugs-bunny-rabbit-rabbit-white-mammal-thumbnail.png'
+# %%
+url = 'https://reussiralecole.fr/wp-content/uploads/2020/09/coloriage-pokemon-01.jpg'
 img = Imagemanip(url)
 img.single_color()
 img.convert_binary(scale=2, thresh_val=200)
@@ -238,3 +240,5 @@ ani.save('./animation.gif', writer='imagemagick')
 
 DisplayImage(url='./animation.gif')
 
+
+# %%
