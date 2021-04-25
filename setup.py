@@ -7,6 +7,7 @@ setup(
   description='Fourier drawing',
   url='https://github.com/KamalAyoubi/Fourier_Transform_Drawing',
   author='Stephane SADIO, Kamal AYOUBI and Otmane JABBAR',
+  author='Stephane SADIO, Kamal AYOUBI and Otmane JABBAR',
   author_email=['stephane.sadio@etu.umontpellier.fr','kamal.ayoubi@etu.umontpellier.fr','otmane.jabbar@etu.umontpellier.fr'],
   license='MIND',
   packages=['FourierDrawing','FourierDrawing.ImageManipulation', 'FourierDrawing.FourierApproximation',
