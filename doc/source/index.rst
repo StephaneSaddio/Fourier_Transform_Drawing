@@ -17,7 +17,12 @@ Welcome to FourierDrawing's documentation!
    
    Classe_FourierApprox/fourierApprox
 
-
+.. toctree::
+   :maxdepth: 1
+   :caption: Complex Circles:
+   
+   ComplexCircles/Circles
+   
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
