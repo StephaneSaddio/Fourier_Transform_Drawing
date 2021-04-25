@@ -91,10 +91,10 @@
 <p class="caption"><span class="caption-text">Fourier Approximation:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Fourier Approximation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#class-fourier-coefficients">Class  Fourier coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#note">Note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#class-fourier-coefficients">Class Fourier coefficients</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="#note">Note</a></li>
 </ul>
 
             
@@ -165,8 +165,21 @@
   <div class="section" id="fourier-approximation">
 <h1>Fourier Approximation<a class="headerlink" href="#fourier-approximation" title="Permalink to this headline">¶</a></h1>
 <p>In the second part, we create the FourierApprox class that computes the Fourier coefficients from the path
-generated  by the Imagemanip object.</p>
-<p>The  fourier coefficients of functin f are defined by :</p>
+generated  by the Imagemanip class.</p>
+<p>Complex numbers can be thought of as vectors as their real and imaginary components give them both magnitude
+and direction. Additionally from euler’s formula every complex number in polar form lies on some circle centered about
+the origin. For example:</p>
+<div class="math notranslate nohighlight">
+\[z = x + iy = r(cos(t) + isin(t)) = r \exp^{it}.\]</div>
+<p>Now if we increase  (or time) by 1 unit, the new complex number is equivalent to walking around
+a circle by 1 unit. The specific circle in question will have radius , be centred about the origin, have an initial
+phase equal to . If we keep walking around the circle we will eventually end up back where we started. Specifically,
+when  (), we have walked all the way around the circle.</p>
+<p>So therefore, since the fourier series expresses a function as a sum of complex sinusoids (these are also functions remember),
+and the outputs of these functions are entirely described by circles in the complex plane, means we can represent each complex
+sinusoid by a circle and a revolving vector. Hence, we can represent a function as a sum of revolving circles and vectors.
+Connected them tip to toe (i.e. adding them together) to find the final drawing.</p>
+<p>The fourier coefficients of functin f are defined by :</p>
 <div class="math notranslate nohighlight">
 \[c_{n}(f) =  \frac{1}{T} \int_{0}^{T} f(t) \exp^{-2\pi n  i \frac{t}{T} }\]</div>
 <p>The Fourier series of f of order N is then defined by:</p>
@@ -175,7 +188,7 @@ generated  by the Imagemanip object.</p>
 \[\sum_{n=0}^{N} c_{n}(f) \exp^{-2\pi n i \frac{t}{T} }\]</div>
 </div></blockquote>
 <div class="section" id="class-fourier-coefficients">
-<h2>Class  Fourier coefficients<a class="headerlink" href="#class-fourier-coefficients" title="Permalink to this headline">¶</a></h2>
+<h2>Class Fourier coefficients<a class="headerlink" href="#class-fourier-coefficients" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="FourierDrawing.FourierApproximation.Class_fourierApproximation.FourierApprox">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">FourierDrawing.FourierApproximation.Class_fourierApproximation.</span></code><code class="sig-name descname"><span class="pre">FourierApprox</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fxn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rnge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_circles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FourierDrawing.FourierApproximation.Class_fourierApproximation.FourierApprox" title="Permalink to this definition">¶</a></dt>
@@ -197,8 +210,9 @@ generated  by the Imagemanip object.</p>
 </dd></dl>
 
 </div>
+</div>
 <div class="section" id="note">
-<h2>Note<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h2>
+<h1>Note<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h1>
 <p>When studying Fourier series and Fourier transforms, sometimes a distortion of the signal appears, known as the Gibbs phenomenon.
 This phenomenon is a side effect which occurs near a discontinuity. Gibbs-type phenomenon causes perturbations
 near endpoints of interval. for more details <a class="reference external" href="https://en.wikipedia.org/wiki/Gibbs_phenomenon">https://en.wikipedia.org/wiki/Gibbs_phenomenon</a>.</p>
@@ -206,7 +220,6 @@ near endpoints of interval. for more details <a class="reference external" href=
 <p>Spline function doesn’t make endpoints exactly equal, so we set the first and last points to their average. In practice, the difficulties associated with the Gibbs phenomenon can be ameliorated by using a smoother method
 of Fourier series summation. We solve the problem by adjusting intercept to minimize distance between entire function, rather than
 just the intercepts.</p>
-</div>
 </div>
 
 
