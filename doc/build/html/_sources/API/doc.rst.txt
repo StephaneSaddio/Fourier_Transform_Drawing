@@ -1,0 +1,5 @@
+API documentation
+=================
+
+..autoclass:: FourierDrawing.FourierApproximation.Classe_FourierApprox.FourierApprox
+    :members:
