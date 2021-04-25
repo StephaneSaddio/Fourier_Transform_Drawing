@@ -72,16 +72,16 @@ class FourierApprox:
         self.phases = np.angle(self.coefs)
         
         
-        def f(x, degree=N):
+        def fourier_coefs(x, degree=N):
             """ Evaluate the function y at time t using Fourier approximiation of degree N  """
             # Evaluate the function y at time t using Fourier approximiation of degree N
-            f = np.array([2*coefs[i-1]*np.exp(1j*2*i*np.pi*x/period) for i in range(1,degree+1)])
-            return(f.sum())
+            fourier_coefs = np.array([2*coefs[i-1]*np.exp(1j*2*i*np.pi*x/period) for i in range(1,degree+1)])
+            return(fourier_coefs.sum())
         
 
         # Evaluate function at all specified points in t domain
-        fourier_approximation = np.array([f(t, degree=N).real for t in t_vals])
-        circles_approximation = np.array([f(t, degree=self.num_circles).real for t in t_vals])
+        fourier_approximation = np.array([fourier_coefs(t, degree=N).real for t in t_vals])
+        circles_approximation = np.array([fourier_coefs(t, degree=self.num_circles).real for t in t_vals])
         
         # Adjust intercept to minimize distance between entire function, 
         # rather than just the intercepts. Gibbs-type phenomenon causes
