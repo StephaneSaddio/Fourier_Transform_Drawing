@@ -10,7 +10,7 @@ Welcome to FourierDrawing's documentation!
 .. toctree::
    :maxdepth: 1
    :caption: Image manipulations:
-
+   
    Imgmanip/Imagemanip
 
 
