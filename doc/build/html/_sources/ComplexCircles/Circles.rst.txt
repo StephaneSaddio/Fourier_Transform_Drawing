@@ -10,8 +10,8 @@ Fourier decomposition of given FourierTransform object.
 Class circles coefficients
 --------------------------
 
-..autoclass:: FourierDrawing.Circles_raddi_center.ComplexCircles.Circles
-  :members:
+.. autoclass:: FourierDrawing.Circles_radii_center.ComplexCircles.Circles
+   :members:
 
 
 Simple and intuitive principle explanation
@@ -20,8 +20,9 @@ Simple and intuitive principle explanation
 The image below demonstrates how a simple sum of complex numbers in terms of phases/amplitudes can be nicely visualized as a set of 
 concatenated circles in the complex plane. Each red line is a vector representing the a term in the sequence of summands: 
 
-..math::
-  c_{n}(f) \exp^{2\pi i(\frac{n}{T})t}.
+.. math::
+   c_{n}(f) \exp^{2\pi i (\frac{n}{T})t }
+
 
 Adding the summands corresponds to simply concatenating each of these red vectors in complex space:
 

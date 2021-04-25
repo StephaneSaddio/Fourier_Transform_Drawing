@@ -4,8 +4,7 @@ from copy import deepcopy
 
 class Circles:
     """ Circles Class:
-        Tracks radii and centers of circles implied by 
-        Fourier decomposition of given FourierTransform object
+        Tracks radii and centers of circles implied by Fourier decomposition of given FourierTransform object
         
         :param FT: FourierTransform objet gives by the second class (fourierApprox)
         :type num_circles: Default number of circles to keep track of

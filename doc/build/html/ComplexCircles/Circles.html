@@ -32,6 +32,7 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -83,7 +84,11 @@
               
             
             
-              <p class="caption"><span class="caption-text">Fourier Approximation:</span></p>
+              <p class="caption"><span class="caption-text">Image manipulations:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ImageManipulation/Imagemanip.html">Image Manipulation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Fourier Approximation:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Classe_FourierApprox/fourierApprox.html">Fourier Approximation</a></li>
 </ul>
@@ -168,22 +173,40 @@ the second class fourierApprox. This class Tracks radii and centers of circles i
 Fourier decomposition of given FourierTransform object.</p>
 <div class="section" id="class-circles-coefficients">
 <h2>Class circles coefficients<a class="headerlink" href="#class-circles-coefficients" title="Permalink to this headline">¶</a></h2>
-<dl class="simple">
-<dt>..autoclass:: FourierDrawing.Circles_raddi_center.ComplexCircles.Circles</dt><dd><dl class="field-list simple">
-<dt class="field-odd">members</dt>
-<dd class="field-odd"><p></p></dd>
-</dl>
+<dl class="py class">
+<dt id="FourierDrawing.Circles_radii_center.ComplexCircles.Circles">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">FourierDrawing.Circles_radii_center.ComplexCircles.</span></code><code class="sig-name descname"><span class="pre">Circles</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">FT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_circles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FourierDrawing.Circles_radii_center.ComplexCircles.Circles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Circles Class:
+Tracks radii and centers of circles implied by 
+Fourier decomposition of given FourierTransform object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>FT</strong> – FourierTransform objet gives by the second class (fourierApprox)</p>
 </dd>
 </dl>
+<p>:type t_init:int, Initial time state of object (default value is 0)
+:type origin: Center of the first circle (0,0)</p>
+<dl class="py method">
+<dt id="FourierDrawing.Circles_radii_center.ComplexCircles.Circles.circle_positions">
+<code class="sig-name descname"><span class="pre">circle_positions</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transpose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FourierDrawing.Circles_radii_center.ComplexCircles.Circles.circle_positions" title="Permalink to this definition">¶</a></dt>
+<dd><p>compute the current radii and centers of each circle at the current value of t</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="FourierDrawing.Circles_radii_center.ComplexCircles.Circles.step">
+<code class="sig-name descname"><span class="pre">step</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FourierDrawing.Circles_radii_center.ComplexCircles.Circles.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the trajectory to follow</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="simple-and-intuitive-principle-explanation">
 <h2>Simple and intuitive principle explanation<a class="headerlink" href="#simple-and-intuitive-principle-explanation" title="Permalink to this headline">¶</a></h2>
 <p>The image below demonstrates how a simple sum of complex numbers in terms of phases/amplitudes can be nicely visualized as a set of
 concatenated circles in the complex plane. Each red line is a vector representing the a term in the sequence of summands:</p>
-<dl class="simple">
-<dt>..math::</dt><dd><p>c_{n}(f) exp^{2pi i(frac{n}{T})t}.</p>
-</dd>
-</dl>
+<div class="math notranslate nohighlight">
+\[c_{n}(f) \exp^{2\pi i (\frac{n}{T})t }\]</div>
 <p>Adding the summands corresponds to simply concatenating each of these red vectors in complex space:</p>
 <a class="reference internal image-reference" href="https://d33wubrfki0l68.cloudfront.net/6db965f0678e487d4d04a8882fbc794e472b4e4b/99187/img/phase-amplitude.png"><img alt="https://d33wubrfki0l68.cloudfront.net/6db965f0678e487d4d04a8882fbc794e472b4e4b/99187/img/phase-amplitude.png" src="https://d33wubrfki0l68.cloudfront.net/6db965f0678e487d4d04a8882fbc794e472b4e4b/99187/img/phase-amplitude.png" style="width: 600px; height: 300px;" /></a>
 <p>Reference :</p>
