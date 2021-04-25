@@ -1,20 +1,28 @@
+# %%
+from matplotlib import animation
+import matplotlib.pyplot as plt
+from matplotlib.pyplot import imshow
+import numpy as np
+from PIL import Image, ImageEnhance
+import requests
+from io import BytesIO
+from copy import deepcopy
+from scipy.spatial import distance
+from scipy.interpolate import UnivariateSpline
+from IPython.display import Image as DisplayImage
+#%%
 import sys
 sys.path.append("..")
+#%%
 from ImageManipulation.Imgmanip import Imagemanip
 from FourierApproximation.Class_fourierApproximation import FourierApprox
 from Circles_radii_center.ComplexCircles import Circles
-from matplotlib import animation
-import matplotlib.pyplot as plt
-import numpy as np
-from scipy.spatial import distance
-from matplotlib import animation
-
-url = 'https://www.seekpng.com/png/detail/116-1164659_line-drawing-bunny-rabbit-at-getdrawings-bunny-drawing.png'
+url = 'https://e7.pngegg.com/pngimages/47/14/png-clipart-line-art-drawing-bugs-bunny-rabbit-rabbit-white-mammal-thumbnail.png'
 
 
 img = Imagemanip(url)
 img.single_color()
-img.convert_binary(scale=3, thresh_val=200)
+img.convert_binary(scale=0.5, thresh_val=200)
 img.black_and_white()
 img.distance_matrix()
 img.contours_search(plot=False)
@@ -230,4 +238,7 @@ def animate(i):
 ani = animation.FuncAnimation(fig, animate, frames=num_frames,
                               interval=interval, blit=True, init_func=init)
                               
-ani.save('./Images/animation5.gif', writer='imagemagick')
+ani.save('./animation.gif', writer='imagemagick')
+#%%
+DisplayImage(url='./animation.gif')
+
