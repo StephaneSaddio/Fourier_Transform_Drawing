@@ -1,6 +1,7 @@
-from FourierDrawing.ImageManipulation.Imgmanip import Imagemanip
-from FourierDrawing.FourierApproximation.Class_fourierApproximation import FourierApprox
-from FourierDrawing.Circles_radii_center.ComplexCircles import Circles
+import FourierDrawing
+from FourierDrawing import Imagemanip
+from FourierDrawing import FourierApprox
+from FourierDrawing. import Circles
 from FourierDrawing.Animate_FT import Animate
 
 # Import raw image
